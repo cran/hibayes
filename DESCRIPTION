@@ -1,8 +1,8 @@
 Package: hibayes
 Title: Individual-Level, Summary-Level and Single-Step Bayesian
         Regression Model
-Version: 1.0.0
-Date: 2021-12-01
+Version: 1.0.1
+Date: 2022-01-11
 Authors@R: c(
     person("Lilin", "Yin", email = "ylilin@163.com", 
            role = c("aut", "cre", "cph")),
@@ -36,9 +36,9 @@ LinkingTo: Rcpp, RcppArmadillo (>= 0.9.600.0.0), RcppProgress, BH,
 RoxygenNote: 7.1.1
 SystemRequirements: C++11
 NeedsCompilation: yes
-Packaged: 2021-12-09 10:36:15 UTC; yinll
+Packaged: 2022-01-13 03:03:07 UTC; yinll
 Author: Lilin Yin [aut, cre, cph],
   Haohao Zhang [aut, cph],
   Xiaolei Liu [aut, cph]
 Repository: CRAN
-Date/Publication: 2021-12-10 08:50:06 UTC
+Date/Publication: 2022-01-13 10:02:42 UTC
