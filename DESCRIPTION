@@ -1,8 +1,8 @@
 Package: hibayes
 Title: Individual-Level, Summary-Level and Single-Step Bayesian
         Regression Model
-Version: 1.1.0
-Date: 2022-05-23
+Version: 2.0.0
+Date: 2022-11-11
 Authors@R: c(
     person("Lilin", "Yin", email = "ylilin@163.com", 
            role = c("aut", "cre", "cph")),
@@ -29,16 +29,16 @@ Maintainer: Lilin Yin <ylilin@163.com>
 URL: https://github.com/YinLiLin/hibayes
 BugReports: https://github.com/YinLiLin/hibayes/issues
 Encoding: UTF-8
-Imports: utils, stats, methods, Rcpp
+Imports: utils, stats, methods, stringr, Rcpp
 Depends: R (>= 3.3.0), bigmemory, Matrix
 LinkingTo: Rcpp, RcppArmadillo (>= 0.9.600.0.0), RcppProgress, BH,
         bigmemory, Matrix
 RoxygenNote: 7.1.1
 SystemRequirements: C++11
 NeedsCompilation: yes
-Packaged: 2022-05-25 00:31:39 UTC; yinll
+Packaged: 2022-11-20 03:04:34 UTC; yinll
 Author: Lilin Yin [aut, cre, cph],
   Haohao Zhang [aut, cph],
   Xiaolei Liu [aut, cph]
 Repository: CRAN
-Date/Publication: 2022-05-25 06:40:07 UTC
+Date/Publication: 2022-11-20 03:30:08 UTC
