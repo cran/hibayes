@@ -11,8 +11,12 @@ NULL
 #' @import methods
 NULL
 
-#' @import Rcpp
+#' @import CMplot
 NULL
+
+#' @importFrom CMplot CMplot
+#' @export
+CMplot::CMplot
 
 #' @importFrom stringr str_extract_all
 NULL

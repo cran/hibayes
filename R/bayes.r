@@ -90,7 +90,7 @@
 #' 
 #' # For GS/GP
 #' ## no environmental effects:
-#' fit = bayes(T1~1, data=pheno, M=geno, M.id=fam[,2], method="BayesCpi",
+#' fit = ibrm(T1~1, data=pheno, M=geno, M.id=fam[,2], method="BayesCpi",
 #' 	niter=2000, nburn=1200, thin=5, threads=1)
 #' 
 #' ## overview of the returned results
@@ -99,15 +99,15 @@
 #' \donttest{
 #'
 #' ## add fixed effects or covariates:
-#' fit = bayes(T1~sex+season+day+bwt, data=pheno, M=geno, M.id=fam[,2],
+#' fit = ibrm(T1~sex+season+day+bwt, data=pheno, M=geno, M.id=fam[,2],
 #' 	method="BayesCpi")
 #'  
 #' ## add environmental random effects:
-#' fit = bayes(T1~sex+(1|loc)+(1|dam), data=pheno, M=geno, M.id=fam[,2],
+#' fit = ibrm(T1~sex+(1|loc)+(1|dam), data=pheno, M=geno, M.id=fam[,2],
 #' 	method="BayesCpi")
 #' 
 #' # For GWAS
-#' fit = bayes(T1~sex+bwt+(1|dam), data=pheno, M=geno, M.id=fam[,2],
+#' fit = ibrm(T1~sex+bwt+(1|dam), data=pheno, M=geno, M.id=fam[,2],
 #' 	method="BayesCpi", map=map, windsize=1e6)
 #' }
 #' 
@@ -118,7 +118,7 @@
 #' 
 #' @export
 
-bayes <- 
+ibrm <- 
 function(
 	formula,
 	data = NULL,
@@ -284,9 +284,8 @@ function(
 		Mp <- NULL;
 	}
 	if(method == "BSLMM"){
-		G <- make_grm(M, lambda=lambda, inverse=TRUE, verbose=verbose)
-		indx <- c(1:nrow(M))
-		res <- BayesK(y=y, X=M, model=method, Pi=Pi, K=G, K_index=indx, fold=fold, C=X, R=R, niter=niter, nburn=nburn, thin=thin, windindx=windindx, dfvr=dfvr, s2vr=s2vr, vg=vg, dfvg=dfvg, s2vg=s2vg, ve=ve, dfve=dfve, s2ve=s2ve, outfreq=printfreq, threads=threads, verbose=verbose)
+		eigG <- make_grm(M, lambda=lambda, eigen=TRUE, verbose=verbose)
+		res <- Bayes(y=y, X=M, model=method, Pi=Pi, Kival=eigG[[1]], Ki=eigG[[2]], fold=fold, C=X, R=R, niter=niter, nburn=nburn, thin=thin, windindx=windindx, dfvr=dfvr, s2vr=s2vr, vg=vg, dfvg=dfvg, s2vg=s2vg, ve=ve, dfve=dfve, s2ve=s2ve, outfreq=printfreq, threads=threads, verbose=verbose)
 	}else{
 		res <- Bayes(y=y, X=M, model=method, Pi=Pi, fold=fold, C=X, R=R, niter=niter, nburn=nburn, thin=thin, windindx=windindx, dfvr=dfvr, s2vr=s2vr, vg=vg, dfvg=dfvg, s2vg=s2vg, ve=ve, dfve=dfve, s2ve=s2ve, outfreq=printfreq, threads=threads, verbose=verbose)
 	}
