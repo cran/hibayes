@@ -1,4 +1,4 @@
-b6aab33b2c608dc11889efaf14fdae61 *DESCRIPTION
+54127350d4b815f08c7c25cbc1fca7c5 *DESCRIPTION
 b2414bba37c9812928c2000b2511c308 *NAMESPACE
 c56fac9e53d05da7a82d3ad07baff89e *R/RcppExports.R
 6a86e2f7ad23fd64eaf4b121e0cc2294 *R/bayes.r
@@ -33,7 +33,7 @@ e26926f201d03cd0db16a23600ce7824 *src/SBayesD.cpp
 a64de8340ff982179dfb1308e03656cd *src/cutwind.cpp
 eb847f3c56ab621c094aa421d00df4e3 *src/hibayes.h
 ac596effd477972bd285267d3f732075 *src/omp_set.h
-4ac3cd93b915a6fcee59fe4809252b15 *src/read_bed.cpp
+7a02e38b7a7a9dd6ac7c50204cac257b *src/read_bed.cpp
 d87b75d16c71291b9460866191b3f2cc *src/rm.cpp
 e3b12d8c8610f16b95b2514576fae564 *src/solver.cpp
 fa01997688d4efaf66224953bd8f47d7 *src/solver.h
